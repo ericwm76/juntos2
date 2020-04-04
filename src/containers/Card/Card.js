@@ -5,11 +5,13 @@ import { Button, Card } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons'
  
 const QuestionCard = () => {
+  const question = "No quiero endeudarme"
 
   return (
     <div className="card">
       <div>
-        <Card title="No quiero endeudarme" extra={<a href="#">?</a>} style={{ width: 300 }}>
+        <Card style={{ width: 400, height: 300 }}>
+          <p className="question">{question}</p>
           <div className="card-buttons">
             <Button className="agree-button" type="primary" icon={<CheckOutlined />} size={"large"} shape={"circle"} />
             <Button className="disagree-button" type="primary" icon={<CloseOutlined />} size={"large"} shape={"circle"}/>

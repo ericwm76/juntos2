@@ -1,5 +1,19 @@
 @import '~antd/es/style/themes/default.less';
 
+.card {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  height: 170px;
+  justify-content: center;
+}
+
 .card-buttons {
   display: flex;
   justify-content: space-around;
@@ -13,6 +27,10 @@
     background: @green-5;
     border: 1px solid @green-6;
   }
+  &:focus {
+    background: @green-7;
+    border: 1px solid @green-8;
+  }
 }
 
 .disagree-button {
@@ -23,7 +41,8 @@
     background: @red-5;
     border: 1px solid @red-6;
   }
+  &:focus {
+    background: @red-7;
+    border: 1px solid @red-8;
+  }
 }
-
-
-

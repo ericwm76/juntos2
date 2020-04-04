@@ -1,14 +1,19 @@
 import React from 'react';
-import './Nav.css';
+import { Menu } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
+import './Nav.less';
 
+const { SubMenu } = Menu;
 
 const Nav = () => {
 
   return (
-    <div className="nav">
-      <h1>Juntos2College</h1>
-    </div>
+    <Menu mode="horizontal">
+      <Menu.Item>Menu</Menu.Item>
+      <SubMenu title="SubMenu">
+        <Menu.Item>SubMenuItem</Menu.Item>
+      </SubMenu>
+    </Menu>
   )
 }
 

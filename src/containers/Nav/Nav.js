@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
 import './Nav.less';
 
 const { SubMenu } = Menu;

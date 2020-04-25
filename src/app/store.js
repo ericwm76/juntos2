@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import presurveyReducer from '../features/presurvey/presurveySlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    presurvey: presurveyReducer,
   },
 });

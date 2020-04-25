@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const presurvey = createSlice({
-  name: "presurvey",
+  name: 'presurvey',
   initialState: {
     current: 0,
     agreed: [],

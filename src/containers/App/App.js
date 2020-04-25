@@ -1,47 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Route } from 'react-router-dom';
 import Nav from '../Nav/Nav'
-import Main from '../Main/Main'
-import './App.less';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentQuestion: 0,
-      agreedQuestions: [],
-      disagreedQuestions: [],
-      language: 'eng'
-    };
-  }
 
-  agree = (question) => {
-    const count = this.state.currentQuestion + 1;
-    this.setState({
-      currentQuestion: count, 
-      agreedQuestions: [this.state.agreedQuestions, question]
-    });
-  }
+import {
+  agreeWithQuestion,
+  disagreeWithQuestion
+} from '../../features/presurvey/presurveySlice'
+import { Presurvey } from '../../features/presurvey/Presurvey';
 
-  disagree = (question) => {
-    const count = this.state.currentQuestion + 1;
-    this.setState({
-      currentQuestion: count, 
-      disagreedQuestions: [this.state.disagreedQuestions, question]
-    });
-  }
+const App = () => {
+  const dispatch = useDispatch()
+  const cards = useSelector(state => state.presurvey.cards)
+  const current = useSelector(state => state.presurvey.current)
 
-  toggleLanguage = () => {
-
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Nav></Nav>
-        <Main agree={this.agree} disagree={this.disagree} currentQuestion={this.state.currentQuestion}></Main>
-      </div>
-    )
-  }
+  return (
+    <>
+      <Nav />
+      <Route exact path="/presurvey">
+        <Presurvey id={current}/>
+      </Route>
+    </>
+  )
 }
 
-export default App;
+export default App
